@@ -1,0 +1,68 @@
+.post-actions{
+    display: flex;
+}
+.post-actions a{
+    flex-grow: 1;
+}
+
+.post-actions .like-action{
+    background-color: #e685b5;
+    
+}
+
+.post-actions .comment-action{
+    background-color: #e685b5;
+}
+
+.myform{
+    display: flex;
+    justify-content: center;
+    background-color: aqua;
+    
+}
+
+.field-div{
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    margin:30px
+    
+}
+.my-forms{
+    width: 340px;
+}
+.btn-div{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(56, 182, 182);
+    border-color: aqua;
+    border-radius: 8px;
+    border-style: solid;
+}
+
+.signup-form a{
+    text-decoration: none;
+}
+.signup-form a:hover{
+    text-decoration: underline;
+    color: #e685b5;
+}
+.signup-form h6{
+    text-align: end;
+}
+
+.signup-form form{
+    background-color: rgb(120, 146, 146);
+}
+.signup-adj{
+    
+    
+}
+.signup-height{
+    height: 100vh;
+    background-color: rgb(116, 108, 108);
+    padding-top: 150px;
+}
+.login-url{
+    color: aqua;
+}

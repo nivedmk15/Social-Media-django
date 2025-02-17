@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}
+    profile
+{% endblock title %}
+    
+
+
+
+
+
+    <!-- navbar -->
+
+    {% block navbar %}
+      {% include "navbar.html" %}
+    {% endblock navbar %}
+
+    <!-- end navbar -->
+
+    {% block content %}
+      
+    
+
+<div class="container">
+
+<form action="" method="post" class="form-control" enctype="multipart/form-data">
+  {% csrf_token %}
+
+  
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">username</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="username" disabled style="cursor: not-allowed;" value="{{user.username}}">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Profile picture</label>
+    <img src="{{profile.profile_img.url}}" alt="" height="150px" width="200pxr">
+    <input type="file" name="profile_img">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Bio</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Bio"  value="{{profile.bio}}" name="bio">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" disabled style="cursor: not-allowed;" value="{{user.email}}">
+  </div>
+
+ 
+
+<center>
+<button class="btn btn-success" type="submit">Update</button></center>
+</form>
+
+
+
+
+</div>
+
+{% endblock content %}

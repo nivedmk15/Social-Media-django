@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}
+    signup
+{% endblock title %}
+
+
+
+
+    <!-- navbar -->
+
+    {% block navbar %}
+      
+    {% endblock navbar %}
+
+    <!-- end navbar -->
+
+{% block content %}
+  
+
+    <!-- user creation form -->
+<div class="signup-height">
+
+    <div class="container signup-adj">
+
+
+
+<div class="myform">
+
+
+
+<div class="signup-form">
+
+<form action="" method="post" class="form-control">
+    {% csrf_token %}
+
+<div class="form-control field-div">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" class="my-forms">
+</div>
+
+<div class="form-control field-div">
+    <label for="email">Email</label>
+    <input type="email" name="email" class="my-forms" id="email">
+</div>
+
+
+
+
+
+<div class="form-control field-div">
+    <label for="password1">Password</label>
+    <input type="password" name="password" class="my-forms">
+</div>
+
+<div class="form-control field-div">
+    <label for="password2">Conform password</label>
+    <input type="password" name="password2" class="my-forms">
+</div>
+
+<h6>Already have an account?<a href="login.html" class="login-url">Login</a></h6>
+<div class="form-control btn-div">
+    <button class="btn btn-success" type="submit">Signup</button>
+</div>
+
+
+</form>
+</div>
+
+
+</div>
+
+
+
+
+
+    </div>
+</div>
+<script>
+    {% for message in messages %}
+    alert('{{message}}')
+    {% endfor %}
+</script>
+    {% endblock content %}

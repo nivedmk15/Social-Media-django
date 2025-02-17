@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Login
+{% endblock title %}
+
+{% block navbar %}
+  
+{% endblock navbar %}
+
+{% block content %}
+  
+
+    <!-- user creation form -->
+<div class="signup-height">
+
+    <div class="container signup-adj">
+
+
+
+<div class="myform">
+
+<div class="err">
+    
+</div>
+
+<div class="signup-form">
+
+<form action="" method="post" class="form-control">
+{% csrf_token %}
+
+<div class="form-control field-div">
+    <label for="username">Username</label>
+    
+    <input type="text" id="username" name="username" class="my-forms" >
+    
+</div>
+
+<div class="form-control field-div">
+    <label for="password">Password</label>
+    <input type="password" name="password" class="my-forms" id="password" >
+</div>
+<h6>Don't have an account?<a href="{% url 'signup' %}">signup</a></h6>
+
+
+<div class="form-control btn-div">
+    <button class="btn btn-success" type="submit">Login</button>
+</div>
+
+
+
+
+</form>
+</div>
+
+
+</div>
+
+
+
+
+
+    </div>
+</div>
+
+<script>
+    {% for i in messages %}
+    alert('{{i}}')
+   
+    {% endfor %}
+    
+
+</script>
+    {% endblock content %}
