@@ -66,3 +66,23 @@
 .login-url{
     color: aqua;
 }
+.post-img{
+    
+     width: 400px;
+     object-fit: contain;
+     height: 200px;
+     
+    
+}
+.search{
+    margin-top :5px;
+    margin-left: 50px;
+    position: relative;
+}
+.search-btn{
+    position: absolute;
+}
+.feed-url{
+    text-decoration: none;
+    color: black;
+}

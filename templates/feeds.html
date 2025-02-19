@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load userphoto %}
 
 {% block title %}
   feeds
@@ -26,20 +27,28 @@
 
 {% block post %}
 
-  <div class="card mt-3 ">
+{% for post in posts reversed %}
+  <div class="card mt-3 " style="height: 450px;width: 500px;">
     <div class="card-body">
-      <h5 class="card-title">Alberto</h5> <span> <img src="https://cdn.pixabay.com/photo/2023/10/12/08/23/bird-8310172_1280.png" class="rounded-circle" alt="Cinque Terre" style="height: 60px;width: 60px;"> </span>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <a href="{% url 'user_profile' post.user %}" class="feed-url"><h5 class="card-title">@{{post.user}}</h5></a> <span> <img src="{% userphoto post.user %}" class="rounded-circle" alt="" style="height: 60px;width: 60px;"> </span>
+      <p class="card-text">{{post.caption}}</p>
+      <p class="card-text"><small class="text-muted">uploaded on {{post.created_at}} </small></p>
     </div>
-    <img src="https://cdn.pixabay.com/photo/2024/08/06/14/43/dolphin-8949505_1280.jpg" class="card-img-bottom mx-auto" alt="..." style="height: 400px; width: 800px;">
-
+    {% if post.image %}
+    <img src="{{post.image.url}}" class="card-img-bottom mx-auto post-img" alt="hh." style="">
+    {% endif %}
+  
+    <form action="{% url 'like_post' %}" method="get">
     <div class="post-actions">
-        <a href="" class="btn btn-outline-dark like-action" >Like(100)</a>
-        <a href="" class="btn btn-outline-dark comment-action">Comments(12)</a>
+      <input type="hidden" name="post_id" value="{{post.id}}">
+        <button type="submit" class="btn btn-outline-dark like-action" >Like(s){{post.no_of_likes}}</button>
+      
+        <!-- <a href="" class="btn btn-outline-dark comment-action">Comments(12)</a> -->
     
         </div>
+      </form>
   </div>
+  {% endfor %}
 
 
 <!-- end posts -->
@@ -50,6 +59,13 @@
 
 </div>
 
+<script>
+  {% for msg in messages %}
+
+  alert('{{msg.message}}')
+
+  {% endfor %}
+</script>
 
 {% endblock post %}
 

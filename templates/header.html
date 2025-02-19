@@ -2,13 +2,17 @@
 <div class="container">
 
     <!-- header  for post something-->
-
+    <form action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
 
     <div class="input-group m-3">
-        <input type="text" class="form-control " placeholder="post something..." aria-label="Recipient's username" aria-describedby="button-addon2">
+      
+
+        <input type="text" class="form-control " placeholder="post something..." aria-label="Recipient's username" aria-describedby="button-addon2" name="caption">
         <label class="input-group-text btn btn-light" for="inputGroupFile01">Upload image</label>
         <input type="file" class="form-control btn-secondary" id="inputGroupFile01" name="image">
-        <button class="btn btn-info text-white" type="button" id="button-addon2">Post</button>
+        <button class="btn btn-info text-white" type="submit" id="button-addon2">Post</button>
+      </form>
       </div>
       <div class="input-group mb-3">
         

@@ -1,0 +1,35 @@
+ {% extends "base.html" %} 
+
+ {% block title %}
+    search result
+{% endblock title %}
+
+
+
+{% block navbar %}
+    {% include "navbar.html" %}
+{% endblock navbar %}
+
+
+{% block content %}
+<div class="container">
+    {% if users %}
+    <h4 class="btn">user found</h4>
+    {% else %}
+    <h4 class="btn">No such user</h4>
+    {% endif %}
+    
+    {% for user in users %}
+    <div class="card mt-5">
+        <div class="card-header bg-warning">
+          @{{user.username}}
+        </div>
+        <div class="card-body">
+          
+          <a href="{% url "user_profile" user.username %}" class="btn btn-primary">Visit Profile</a>
+        </div>
+      </div>
+{% endfor %}
+  
+</div>
+{% endblock content %}

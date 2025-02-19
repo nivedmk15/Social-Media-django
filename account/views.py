@@ -7,11 +7,6 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 @login_required(login_url='login')
-def feed(request):
-    return render(request,'feeds.html')
-
-
-@login_required(login_url='login')
 def profile(request):
     user = request.user
     
